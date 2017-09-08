@@ -1,0 +1,33 @@
+USE_CAMERA_STUB := true
+
+# inherit from the proprietary version
+-include vendor/lyf/mobee_msm8939_64/BoardConfigVendor.mk
+
+TARGET_ARCH := arm
+TARGET_NO_BOOTLOADER := true
+TARGET_BOARD_PLATFORM := msm8916
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_SMP := true
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+TARGET_BOOTLOADER_BOARD_NAME := mobee_msm8939_64
+
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_PAGESIZE := 2048
+
+# Device Partition sizes
+BOARD_BOOTIMAGE_PARTITION_SIZE := 35232153
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 35232153
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3377463296
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 12670153523
+BOARD_CACHEIMAGE_PARTITION_SIZE := 281018368
+BOARD_FLASH_BLOCK_SIZE := 131072
+TARGET_USERIMAGES_USE_EXT4 := true
+
+TARGET_PREBUILT_KERNEL := device/lyf/mobee_msm8939_64/prebuilt/kernel
+
+BOARD_HAS_NO_SELECT_BUTTON := true
